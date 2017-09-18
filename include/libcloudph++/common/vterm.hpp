@@ -77,7 +77,7 @@ namespace libcloudphxx
 
           // parameters from table 1
           quantity<si::mass_density, real_t> alfa = 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             pi<real_t>()
 #else
             CUDART_PI

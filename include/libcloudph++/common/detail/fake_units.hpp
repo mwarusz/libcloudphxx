@@ -116,7 +116,7 @@ namespace libcloudphxx
 	  typedef detail::qntt_t volume;
 
 // if needed since this file is included in cpp test fake_units
-#if defined(__NVCC__)
+#if defined(__CUDA__)
           __device__
 #endif
 	  static const detail::unit_t 

@@ -244,7 +244,7 @@ namespace libcloudphxx
 
           return 
             rd3 + (real_t(3./4) /
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             pi<real_t>()
 #else
             CUDART_PI

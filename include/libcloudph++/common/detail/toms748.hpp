@@ -19,15 +19,15 @@ namespace toms748_detail
 {
   namespace // anonymous namespace to prevent multiple definition error at link time
   {
-    template<class T> T max_value();
+    template<class T> BOOST_GPU_ENABLED T max_value();
     template<> BOOST_GPU_ENABLED float max_value<float>() {return FLT_MAX;}
     template<> BOOST_GPU_ENABLED double max_value<double>() {return DBL_MAX;}
 
-    template<class T> T min_value();
+    template<class T> BOOST_GPU_ENABLED T min_value();
     template<> BOOST_GPU_ENABLED float min_value<float>() {return FLT_MIN;}
     template<> BOOST_GPU_ENABLED double min_value<double>() {return DBL_MIN;}
 
-    template<class T> T epsilon();
+    template<class T> BOOST_GPU_ENABLED T epsilon();
     template<> BOOST_GPU_ENABLED float epsilon<float>() {return FLT_EPSILON;}
     template<> BOOST_GPU_ENABLED double epsilon<double>() {return DBL_EPSILON;}
   }

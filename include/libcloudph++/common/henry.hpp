@@ -77,7 +77,7 @@ namespace libcloudphxx
           real_t(  //bug in boost #6957
             sqrt(
               real_t(8.) / 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
 	      pi<real_t>()
 #else
 	      CUDART_PI

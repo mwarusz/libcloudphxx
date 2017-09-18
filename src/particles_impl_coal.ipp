@@ -156,7 +156,7 @@ namespace libcloudphxx
           const tpl_ro_calc_t &tpl_ro_calc(thrust::get<2>(tpl_ro_rw));
 
           // sanity checks
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
           assert(thrust::get<ix_a_ix>(tpl_ro) + 1 == thrust::get<ix_b_ix>(tpl_ro));
 #endif
  

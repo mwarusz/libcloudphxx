@@ -278,7 +278,7 @@ namespace libcloudphxx
         tmp_device_size_cell.resize(n_cell);
 
         // if using nvcc, put increase_sstp_coal flag in host memory, but with direct access from device code
-#if defined(__NVCC__)
+#if defined(__CUDA__)
         cudaMallocHost(&increase_sstp_coal, sizeof(bool));
 #else
         increase_sstp_coal = new bool();
@@ -459,7 +459,7 @@ namespace libcloudphxx
     template <typename real_t, backend_t device>
     particles_t<real_t, device>::particles_t(const opts_init_t<real_t> &opts_init, const int &n_x_bfr, int n_x_tot) 
     {
-#if defined(__NVCC__)
+#if defined(__CUDA__)
       if(opts_init.dev_id >= 0)
         cudaSetDevice(opts_init.dev_id);
 #endif

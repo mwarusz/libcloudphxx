@@ -2,7 +2,7 @@
 
 #include "thrust.hpp"
 
-#if defined(__NVCC__)
+#if defined(__CUDA__)
 #  include <curand.h>
 #  include <limits>
 #else
@@ -19,7 +19,7 @@ namespace libcloudphxx
       template <typename real_t, int backend>
       class rng
       {
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
 	// serial version using C++11's <random>
 	using engine_t = std::mt19937;
         using dist_u01_t = std::uniform_real_distribution<real_t>;
@@ -68,7 +68,7 @@ namespace libcloudphxx
       template <typename real_t>
       class rng<real_t, CUDA>
       {
-#if defined(__NVCC__)
+#if defined(__CUDA__)
 	// CUDA parallel version using curand
 
 	// private member fields

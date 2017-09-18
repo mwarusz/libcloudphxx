@@ -1,6 +1,6 @@
 #pragma once
 
-#if defined(__NVCC__)
+#if defined(__CUDA__)
 #  include <math_constants.h>
 #endif
 
@@ -35,7 +35,7 @@ namespace libcloudphxx
 #endif
 
         real_t PI = 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
         pi<real_t>();
 #else
         CUDART_PI;

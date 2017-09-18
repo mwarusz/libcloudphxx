@@ -70,7 +70,7 @@ namespace libcloudphxx
         detail::chem_vol_fun<real_t>()  // op
       );
 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
       using boost::math::isfinite;
 #endif
       assert(isfinite(*thrust::min_element(V.begin(), V.end())));

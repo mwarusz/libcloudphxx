@@ -48,7 +48,7 @@ namespace libcloudphxx
 
           return 
             real_t(4./3) * 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             pi<real_t>()
 #else
             CUDART_PI
@@ -97,7 +97,7 @@ namespace libcloudphxx
 
           return 
             real_t(4./3) * 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             pi<real_t>()
 #else
             CUDART_PI
@@ -121,7 +121,7 @@ namespace libcloudphxx
 
           return
             real_t(4./3) * 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             pi<real_t>()
 #else
             CUDART_PI

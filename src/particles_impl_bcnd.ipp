@@ -31,7 +31,7 @@ namespace libcloudphxx
         real_t operator()(const tuple &tup)
         {
           return 4./3. 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
             * pi<real_t>()
 #else
             * CUDART_PI

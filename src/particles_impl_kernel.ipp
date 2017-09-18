@@ -1,7 +1,7 @@
 #include "tpl_calc_wrapper.hpp"
 #include <libcloudph++/common/moist_air.hpp>
 
-#if defined(__NVCC__)
+#if defined(__CUDA__)
 #  include <math_constants.h>
 #endif
 
@@ -49,7 +49,7 @@ namespace libcloudphxx
         using std::max;
 #endif
         real_t res =
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
         pi<real_t>()
 #else
         CUDART_PI
@@ -91,7 +91,7 @@ namespace libcloudphxx
         using std::max;
 #endif
         return 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
         pi<real_t>()
 #else
         CUDART_PI

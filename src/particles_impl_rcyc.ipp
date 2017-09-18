@@ -59,7 +59,7 @@ namespace libcloudphxx
       sorted = false;
       thrust::sequence(sorted_id.begin(), sorted_id.end()); 
       {
-#if defined(__NVCC__) 
+#if defined(__CUDA__) 
         assert(sizeof(thrust_size_t) == sizeof(n_t));
 #else
         static_assert(sizeof(thrust_size_t) == sizeof(n_t), "");

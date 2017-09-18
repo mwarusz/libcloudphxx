@@ -184,7 +184,7 @@ namespace libcloudphxx
         );
       }
 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
       using boost::math::isfinite;
 #endif
       for (int i = 0; i < chem_gas_n; ++i){

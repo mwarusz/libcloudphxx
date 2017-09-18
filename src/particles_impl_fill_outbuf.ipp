@@ -14,14 +14,14 @@ namespace libcloudphxx
     {
       thrust::fill(tmp_host_real_cell.begin(), tmp_host_real_cell.end(), 0);
 
-#if defined(__NVCC__)
+#if defined(__CUDA__)
       thrust::copy(
         count_ijk.begin(), count_ijk.end(), // from
         tmp_host_size_cell.begin()
       );
 #endif
 
-#if !defined(__NVCC__)
+#if !defined(__CUDA__)
       thrust_device::vector<thrust_size_t> &pi(count_ijk);
 #else
       thrust::host_vector<thrust_size_t> &pi(tmp_host_size_cell);
